@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boluadeoye — Web Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --panel: #ffffff;
+      --ink: #212529;
+      --muted: #6c757d;
+      --primary: #f59e0b;
+      --primary-dark: #d97706;
+      --primary-ink: #ffffff;
+      --serif: 'Playfair Display', serif;
+      --sans-serif: 'Roboto', sans-serif;
+      --transition: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.7 var(--sans-serif);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s var(--transition);
+    }
+    a:hover {
+      color: var(--primary-dark);
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header */
+    header {
+      background: var(--panel);
+      border-bottom: 1px solid #dee2e6;
+      padding: 1rem 0;
+    }
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .brand h1 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .main-nav a {
+      font-weight: 500;
+      color: var(--ink);
+      margin-left: 1.5rem;
+    }
+    .main-nav a:hover {
+      color: var(--primary);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      background: var(--primary);
+      color: var(--primary-ink);
+      border: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .btn:hover {
+      background: var(--primary-dark);
+      color: var(--primary-ink);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3rem;
+    }
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 45ch;
+      margin-bottom: 2rem;
+    }
+    .hero-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap header-row">
+      <a href="#" class="brand">
+        <img src="images/Logo.png" alt="Boluadeoye Logo" class="brand-logo">
+        <h1>Boluadeoye</h1>
+      </a>
+      <nav class="main-nav">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact" class="btn">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <h1>A Freelance Web Designer</h1>
+          <p>I build beautiful, simple, and effective websites that help businesses connect with their audience and achieve their goals.</p>
+          <a href="#services" class="btn">See My Services &rarr;</a>
+        </div>
+        <figure class="hero-image">
+          <img src="images/Bolu.png" alt="Boluadeoye">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
