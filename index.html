@@ -3,164 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name - Portfolio</title>
+  <title>Freelance Product Designer</title>
   <style>
-    /* Reset some default styles */
+    /* Reset */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f7f7f7;
-      color: #333;
-      line-height: 1.6;
+      background-color: #fff;
+      color: #222;
+      line-height: 1.5;
     }
-
     header {
-      background-color: #4a90e2;
+      background-color: #c62828; /* strong red */
       color: white;
-      padding: 2rem 1.5rem;
-      text-align: center;
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
 
-    header h1 {
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
-      letter-spacing: 1.2px;
-    }
-
-    header p {
-      font-size: 1.25rem;
-      font-weight: 300;
-      letter-spacing: 0.9px;
-    }
-
+    /* Navigation */
     nav {
-      margin-top: 1rem;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.3s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.75;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    section h2 {
-      color: #4a90e2;
-      font-size: 2rem;
+      flex: 1 1 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #4a90e2;
-      padding-bottom: 0.5rem;
-      letter-spacing: 1px;
     }
-
-    .about p {
-      font-size: 1.125rem;
-      max-width: 700px;
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: default;
     }
-
-    .projects ul {
+    .logo .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #fbcf3b;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    nav ul {
       list-style: none;
+      display: flex;
+      gap: 2rem;
+      flex-grow: 1;
+      justify-content: center;
     }
-
-    .projects li {
-      background: white;
-      margin-bottom: 1rem;
-      padding: 1.25rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .projects li:hover {
-      transform: translateY(-5px);
-    }
-
-    .projects li a {
+    nav ul li a {
       text-decoration: none;
-      color: #333;
+      color: white;
       font-weight: 600;
-      font-size: 1.125rem;
+      font-size: 1rem;
+      transition: opacity 0.3s;
+    }
+    nav ul li a:hover {
+      opacity: 0.8;
+    }
+    .contact-btn {
+      background-color: #fbcf3b; /* yellow */
+      color: #222;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact-btn:hover {
+      background-color: #e6bf26;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #222;
-      color: #eee;
-      letter-spacing: 0.7px;
+    /* Hero content */
+    .hero {
+      display: flex;
+      flex: 1 1 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 520px;
+    }
+    .hero-text h1 {
+      font-size: 2.75rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+    }
+    .hero-text p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      color: #f1f1f1;
+      max-width: 460px;
+    }
+    .hire-btn {
+      background-color: #fbcf3b;
+      border: none;
+      padding: 0.85rem 2.25rem;
+      font-weight: 700;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hire-btn:hover {
+      background-color: #e6bf26;
+    }
+    .hire-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: #222;
+      transition: transform 0.3s;
+    }
+    .hire-btn:hover svg {
+      transform: translateX(5px);
+    }
+    .arrow-down {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      color: white;
+      animation: bounce 2s infinite ease-in-out;
+      cursor: default;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    /* Hero image */
+    .hero-image {
+      max-width: 480px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .hero-image img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    /* Badge styles */
+    .badge {
+      position: absolute;
+      background: white;
+      color: #222;
+      padding: 0.5rem 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      border-radius: 4px;
+      font-size: 0.875rem;
+      max-width: 200px;
+    }
+    .badge--top-right {
+      top: 15px;
+      right: 15px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .badge--bottom-left {
+      bottom: 15px;
+      left: 15px;
+    }
+    .badge svg {
+      width: 20px;
+      height: 20px;
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
+    @media (max-width: 880px) {
+      header {
+        padding: 1.5rem 1rem;
+      }
+      .hero-text h1 {
         font-size: 2rem;
       }
-
-      nav a {
-        margin: 0 0.5rem;
-        font-size: 0.9rem;
+      .hero {
+        flex-direction: column;
       }
-
-      main {
-        margin: 2rem 1rem;
+      .hero-image {
+        max-width: 100%;
       }
     }
+
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Your Name</h1>
-    <p>Web Developer | Creative Coder | Problem Solver</p>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <div class="logo"><span class="dot"></span> goage</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Our Product</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <button class="contact-btn">Contact Me</button>
     </nav>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1>A Freelance Interaction & Visual <br> Product Designer</h1>
+        <p>In the eyes of future employers and clients, a UI designer is only as good as their portfolio. But what does an impressive UI design portfolio actually look like—and how can you take your portfolio to the next level?</p>
+        <button class="hire-btn">
+          Hire Me Now 
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="arrow-down">&#8615;</div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=500&q=80" alt="Portrait of a man" />
+        <div class="badge badge--top-right">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2" /><path stroke-width="2" d="M12 7v5l3 3" /></svg>
+          IDF CERTIFIED <br> Professional UI/UX Designer
+        </div>
+        <div class="badge badge--bottom-left">
+          I Design Beautifully Simple Things, And I Love What I Do.
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section id="about" class="about">
-      <h2>About Me</h2>
-      <p>Hello! I'm a passionate web developer eager to build modern, responsive websites. I enjoy learning new technologies and solving problems with clean, elegant code.</p>
-    </section>
-
-    <section id="projects" class="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="#" target="_blank">Project One</a> - A responsive portfolio website built with HTML and CSS.</li>
-        <li><a href="#" target="_blank">Project Two</a> - A JavaScript app that calculates daily expenses.</li>
-        <li><a href="#" target="_blank">Project Three</a> - A simple blog layout using Flexbox and Grid.</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Feel free to reach out via email at <a href="mailto:your.email@example.com">your.email@example.com</a> or connect on <a href="https://github.com/yourusername" target="_blank">GitHub</a>.</p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
-  </footer>
 </body>
 </html>
